@@ -1,26 +1,36 @@
-<!--details page -->
-
 <h1><%= @place["name"] %></h1>
 
-<h3>Posts</h3>
-
- <ul>
+ 
    <% for entry in @entries %>
-    <li>
-      <a href="/entries/<%= entry["title"] %>"><%= entry["description"] %></a>
-    </li>
+    
+      <h3> <%= entry["title"] %> </h3>
+      <p> <%= entry["posted_on"] %> </p>
+      <p> <%= entry["description"] %> </p>
+   
    <% end %>
-</ul>
 
-<h1>New Post</h1>
 
-<form action="/entries" method="post">
+<h5>
+  <a href="/entries/new?place_id=<%= @place["id"] %>">New Post</a> 
+</h5>
+
+<!--<form action="/entries" method="post">
   <p>
     <label for="title">Title</label>
     <input type="text" name="title">
+    <br>
+    <br>
+    <label for="description">Description</label>
+    <textarea name="description" id="description_input"></textarea>
+    <br>
+
+    <label for="post_date">Post Date</label>
+    <input type="date" name="post_date" id="post_date_input">
+
+    <input name="place_id" type="hidden" value="<%= @place["id"] %>" />
   </p>
   
   <button>Submit</button>
-</form>
+</form> -->
 
 <p><a href="/places">Back to All Places</a></p>

@@ -1,10 +1,19 @@
-<h1>New Post</h1>
+<h1>New Post for <%= @place["name"] %></h1>
 
 <form action="/entries" method="post">
   <p>
     <label for="title">Title</label>
-    <input type="text" name="title">
+    <input type="text" name="title" id="title_input">
+
+    <label for="description">Description</label>
+    <textarea name="description" id="description_input"></textarea>
+
+    <label for="posted_on">Post Date</label>
+    <input type="date" name="posted_on" id="posted_on_input">
+
   </p>
   
+  <input name="place_id" type="hidden" value="<%= @place["id"] %>" id="place_id_input">
+
   <button>Submit</button>
 </form>

@@ -1,7 +1,7 @@
 class PlacesController < ApplicationController
 
   def index
-    # find all Entry rows
+    # find all places rows
     @places = Place.all
     # render :template => "places/index"
   end
